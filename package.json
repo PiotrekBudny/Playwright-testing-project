@@ -1,0 +1,25 @@
+{
+  "name": "playwright-testing-project",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000P\u0000l\u0000a\u0000y\u0000w\u0000r\u0000i\u0000g\u0000h\u0000t\u0000-\u0000t\u0000e\u0000s\u0000t\u0000i\u0000n\u0000g\u0000-\u0000p\u0000r\u0000o\u0000j\u0000e\u0000c\u0000t\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PiotrekBudny/Playwright-testing-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/PiotrekBudny/Playwright-testing-project/issues"
+  },
+  "homepage": "https://github.com/PiotrekBudny/Playwright-testing-project#readme",
+  "devDependencies": {
+    "@playwright/mcp": "^0.0.68",
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^25.5.0",
+    "dotenv": "^17.3.1"
+  }
+}
