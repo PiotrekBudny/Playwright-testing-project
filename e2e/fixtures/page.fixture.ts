@@ -1,7 +1,6 @@
 import { test as base } from '@playwright/test';
 import { LoginPage } from '../pages/LoginPage';
 import { ProductsPage } from '../pages/ProductsPage';
-
 type Pages = {
   loginPage: LoginPage;
   productsPage: ProductsPage;
