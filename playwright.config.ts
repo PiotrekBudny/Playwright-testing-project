@@ -12,11 +12,12 @@ import path from 'path';
 
 // Load environment-specific .env file or default .env
 dotenv.config({
-  path: path.resolve(__dirname, `.env.${process.env.NODE_ENV || 'development'}`)
+  path: path.resolve(__dirname, `.env.${process.env.NODE_ENV || 'development'}`),
+  quiet: true
 });
 
 // Fallback to .env if environment-specific file not found
-dotenv.config({ path: path.resolve(__dirname, '.env') });
+dotenv.config({ path: path.resolve(__dirname, '.env'), quiet: true });
 
 /**
  * See https://playwright.dev/docs/test-configuration.
