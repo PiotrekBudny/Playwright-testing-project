@@ -1,5 +1,5 @@
 import { expect } from '@playwright/test';
-import { ProductsPage } from '../pages/ProductsPage';
+import { ProductsPage } from '../pages/productsPage';
 
 export class ProductsAssertions {
   constructor(private readonly productsPage: ProductsPage) {}
