@@ -14,7 +14,6 @@ export class ProductsPage {
   get sortDropdown(): Locator { return this.page.locator('[data-test="product-sort-container"]'); }
   get cartIcon(): Locator { return this.page.locator('[data-test="shopping-cart-link"]'); }
   get cartBadge(): Locator { return this.page.locator('.shopping_cart_badge'); }
-  get burgerMenuButton(): Locator { return this.page.locator('#react-burger-menu-btn'); }
 
   // Dynamic locators
   getItemByName(name: string): Locator {
@@ -27,12 +26,12 @@ export class ProductsPage {
     return this.getItemByName(name).locator('[data-test="inventory-item-price"]');
   }
 
-  getAddToCartButton(productSlug: string): Locator {
-    return this.page.locator(`[data-test="add-to-cart-${productSlug}"]`);
+  getAddToCartButton(productName: string): Locator {
+    return this.page.locator(`[data-test="add-to-cart-${productName}"]`);
   }
 
-  getRemoveButton(productSlug: string): Locator {
-    return this.page.locator(`[data-test="remove-${productSlug}"]`);
+  getRemoveButton(productName: string): Locator {
+    return this.page.locator(`[data-test="remove-${productName}"]`);
   }
 
   // Actions
@@ -40,12 +39,12 @@ export class ProductsPage {
     await this.sortDropdown.selectOption(option);
   }
 
-  async addToCart(productSlug: string) {
-    await this.getAddToCartButton(productSlug).click();
+  async addToCart(productName: string) {
+    await this.getAddToCartButton(productName).click();
   }
 
-  async removeFromCart(productSlug: string) {
-    await this.getRemoveButton(productSlug).click();
+  async removeFromCart(productName: string) {
+    await this.getRemoveButton(productName).click();
   }
 
   async goToCart() {

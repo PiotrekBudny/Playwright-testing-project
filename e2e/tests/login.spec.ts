@@ -1,6 +1,6 @@
-import { LoginAssertions } from '../assertions/login.assertions';
-import { ProductsAssertions } from '../assertions/products.assertions copy';
-import { test } from '../fixtures/page.fixture';
+import { LoginAssertions } from '../assertions/login-assertions';
+import { ProductsAssertions } from '../assertions/products-assertions';
+import { test } from '../fixtures/page-fixture';
 
 test.describe('User login tests', () => {
   test('User can successfully login', async ({ page, loginPage, productsPage }) => {
@@ -33,6 +33,22 @@ test.describe('User login tests', () => {
     //ASSERT
     let loginAssertions = new LoginAssertions(loginPage);
     await loginAssertions.verifyErrorMessageDisplayed(expectedErrorMessage);
+  });
+
+  test('User can successfully logout', async ({ page, loginPage, hamburgerMenuPage }) => {
+    
+    //ARRANGE
+    const username = 'standard_user';
+    const password = 'secret_sauce';
+    
+    //ACT  
+    await page.goto(process.env.BASE_URL!);
+    await loginPage.login(username, password);
+    await hamburgerMenuPage.logoutFromWebsite();
+    
+    //ASSERT
+    let loginPageAssertions = new LoginAssertions(loginPage);
+    await loginPageAssertions.verifyIfLoginFormIsDisplayed();
   });
 })
 
