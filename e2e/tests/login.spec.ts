@@ -32,8 +32,7 @@ test.describe('User login tests', () => {
     
     //ASSERT
     let loginAssertions = new LoginAssertions(loginPage);
-    let actualErrorMessage = await loginPage.getErrorMessage();
-    await loginAssertions.verifyErrorMessageDisplayed(expectedErrorMessage, actualErrorMessage);
+    await loginAssertions.verifyErrorMessageDisplayed(expectedErrorMessage);
   });
 })
 
