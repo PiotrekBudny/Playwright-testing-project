@@ -7,6 +7,10 @@ type Pages = {
 };
 
 export const test = base.extend<Pages>({
+  page: async ({ page }, use) => {
+    await use(page);
+    await page.close();
+  },
   loginPage: async ({ page }, use) => {
     const loginPage = new LoginPage(page);
     await use(loginPage);           
